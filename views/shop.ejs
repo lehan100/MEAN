@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%- include("./includes/head");%>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+	<div class="container"><a class="navbar-brand"><%=navTitle; %></a></div>
+</nav>
+<br/>
+<div class="container">
+	<div class="row">
+		<div class="col col-md-3">
+			<%- include("includes/menu");%>
+		</div>
+		<div class="col col-md-9">
+			<% if(products.length>0){ %>
+				<table class="table">
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Price</th>
+					</tr>
+			    <% products.forEach((item,index)=>{ %>
+			    	<tr>
+						<td><%=index %></td>
+						<td><%=item.name %></td>
+						<td><%=item.price %></td>
+					</tr>
+			    <% }); %>
+			    </table>
+			<% }else{ %>
+			<p class="alert alert-danger">Data products empty<p>
+			<% } %>
+		</div>
+	</div>
+</div>
+</body>
+</html>
