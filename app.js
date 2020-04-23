@@ -20,7 +20,7 @@ app.get("/",homeController.Home);
 //	res.send("<h1>Wellcome to Express.js</h1>");
 //});
 //404
-const errorController = require("./controllers/errorController")
+const errorController = require("./controllers/errorController");
 app.use(errorController.err404);
 //Start Server
 http.createServer(app).listen(3000);
